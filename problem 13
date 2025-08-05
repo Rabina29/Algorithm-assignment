@@ -1,0 +1,20 @@
+#include<bits/stdc++.h>
+using namespace std;
+int sum(int a[],int y )
+{
+ if(y==0) return 0;
+ else return a[y-1]+sum(a,y-1);
+}
+int main()
+{
+ int p;
+ cin >> p;
+ int arr[p];
+ for(int i=0;i<p;i++)
+ {
+ cin >> arr[i];
+ }
+ int z= sum(arr,p);
+ cout << z << endl;
+ return 0;
+}
