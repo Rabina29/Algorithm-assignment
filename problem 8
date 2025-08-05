@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+bool isPal1(string s, int l, int r)
+{
+ if(l>=r) return true;
+ if(s[l]!=s[r]) return false;
+ return isPal1(s,l+1,r-1);
+}
+bool isPal2(string s)
+{
+ int l=0,r=s.length()-1;
+ return isPal1(s,l,r);
+}
+int main()
+{
+ string x;
+ cin >> x;
+ if(isPal2(x)) cout << "Yes it's a Pallindrome" << endl;
+ else cout << "No, not a palindrome" << endl;
+ return 0;
+}
